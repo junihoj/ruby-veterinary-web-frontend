@@ -371,7 +371,7 @@ function MessageBubble({ message }: { message: ChatMessage }) {
     return (
       <div className="mr-auto max-w-[90%] rounded-[16px] rounded-bl-[4px] border border-[var(--rv-line)] bg-[var(--rv-sage)] px-4 py-2.5">
         <p className="mb-1 text-[10.5px] font-semibold text-[var(--rv-teal-deep)]">
-          Clinic team
+          {message.senderName ?? "Clinic team"}
         </p>
         <p className="whitespace-pre-wrap text-[14px] leading-relaxed text-[var(--rv-ink)]">
           {message.text}

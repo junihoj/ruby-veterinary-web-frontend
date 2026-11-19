@@ -72,6 +72,8 @@ const ERROR_MESSAGES: Record<string, string> = {
     "This chat has reached its limit. Start a new chat, or call the clinic.",
   UNAUTHORIZED:
     "This chat session is no longer valid. Start a new chat to continue.",
+  PROVIDER_ERROR:
+    "Staff messaging is unavailable right now. Please call the clinic, or try again in a moment.",
   INTERNAL: "Something went wrong on our side. Please try again.",
 };
 
@@ -494,6 +496,7 @@ export class ChatClient {
       text: frame.text,
       citations: [],
       streaming: false,
+      ...(frame.senderName ? { senderName: frame.senderName } : {}),
     });
     this.cursor = Math.max(this.cursor, frame.seq);
   }

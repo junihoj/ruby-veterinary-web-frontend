@@ -19,6 +19,7 @@ export interface ChatMessage {
   text: string;
   citations: ChatCitation[];
   streaming: boolean;
+  senderName?: string;
   notice?: boolean;
   error?: boolean;
   handoff?: boolean;
